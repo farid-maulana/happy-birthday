@@ -1,61 +1,61 @@
-body,
-html {
-  height: 100%;  
+/* Base styles */
+body, html {
+  height: 100%;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
+/* Background */
 .bg {
-  /* Location of the image */
   background-image: url(./img/background.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
-  /* This is what makes the background image rescale based
-     on the container's size */
   background-size: cover;
-
-  /* Set a background color that will be displayed
-     while the background image is loading */
-  background-color: #FEC0CD;
+  background-color: #FEC0CD; /* Fallback color */
   height: 100%;
-}
-
-
-.img {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  overflow-x: hidden;
   position: relative;
-  top: 20px;
-  margin-bottom: 30px;
-  width: 350px;
 }
 
+/* Image styling */
+.img {
+  display: block;
+  margin: 20px auto 30px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+}
+
+/* Tap instruction */
 #tap {
-  display: inline-block;
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px 15px;
+  border-radius: 20px;
+  width: fit-content;
 }
 
+/* Photo styling */
 .foto {
   width: 80%;
   max-width: 400px;
   min-width: 300px;
   margin-top: 100px;
-  /* margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px; */
   display: inline-block;
-  /* vertical-align: middle;
-  line-height: normal; */
 }
 
-
-
-/* Paper */
+/* Paper styling */
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Handlee);
-
 
 .paper {
   font-family: 'Roboto', sans-serif;
@@ -113,8 +113,10 @@ html {
   font-size: 18px;
   box-sizing: border-box;
   z-index: 1;
+  overflow-y: auto;
 }
 
+/* Question box styling */
 .kotak {
   position: relative;
   width: 90%;
@@ -131,10 +133,18 @@ html {
   overflow: hidden;
 }
 
+/* Button styling */
 .btn {
   border-radius: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Heart and thanks positioning */
 #slideLima {
   position: relative;
   top: 300px;
@@ -146,17 +156,31 @@ html {
   display: inline-block;
 }
 
-h1 {
-  font-weight: normal;
+/* Countdown timer */
+.container {
+  color: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.container h5 {
+  margin-bottom: 15px;
 }
 
 li {
   display: inline-block;
   font-size: 16px;
   list-style-type: none;
-  position: relative;
-  left: -20px;
-  margin-top: 10px;
+  /*position: relative;*/
+  /*left: -20px;*/
+  /*margin-top: 10px;*/
   padding: 10px;
   text-transform: uppercase;
 }
@@ -164,6 +188,12 @@ li {
 li span {
   display: block;
   font-size: 24px;
+  font-weight: bold;
+  color: #D44147;
+}
+
+h1 {
+  font-weight: normal;
 }
 
 body {
@@ -172,10 +202,24 @@ body {
   align-items: center;
 }
 
-.container {
-  color: #333;
-  position: relative;
-  top: 250px;
-  padding: 0;
-  text-align: center;
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  li {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  li span {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+
+  li {
+    padding: 5px;
+  }
 }
