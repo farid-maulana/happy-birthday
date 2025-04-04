@@ -170,19 +170,20 @@ new TypeIt("#teks1", {
 
 new TypeIt("#teks2", {
     strings: [
-        "Dengan ataupun tanpaku, semoga semesta selalu membahagiakan kamu bagimanapun caranya.",
+        "Dengan ataupun tanpaku, semoga semesta selalu membahagiakanmu bagaimanapun caranya.",
         " ",
         "barakallah fi umrik nona, terima kasih sudah bertahan sampai sejauh ini.",
         " ",
-        "- Wish all you the best <3"],
-    startDelay: 2000,
+        "- Wish all you the best <3"
+    ],
+    startDelay: 1000,
     speed: 100,
     waitUntilVisible: true
 }).go();
 
 
 new TypeIt("#trims", {
-    strings: ["Terimakasih."],
+    strings: ["Terima kasih Nona!"],
     startDelay: 2000,
     speed: 150,
     loop: false,
